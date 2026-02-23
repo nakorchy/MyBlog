@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 	title: "Mizuki",
 	subtitle: "One demo website",
 	siteURL: "https://blog.nakorchy.top/", // 请替换为你的站点URL，以斜杠结尾
-	siteStartDate: "2026-02-23", // 站点开始运行日期，用于站点统计组件计算运行天数
+	siteStartDate: "2025-12-22", // 站点开始运行日期，用于站点统计组件计算运行天数
 
 	timeZone: SITE_TIMEZONE,
 
@@ -450,7 +450,7 @@ export const shareConfig: ShareConfig = {
 
 export const announcementConfig: AnnouncementConfig = {
 	title: "", // 公告标题，填空使用i18n字符串Key.announcement
-	content: "2026年2月23日，本站正式启动", // 公告内容
+	content: "2025年12月22日，本网站开始启用", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
