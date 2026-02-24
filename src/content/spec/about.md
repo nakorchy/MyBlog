@@ -1,9 +1,9 @@
-
-This website is built with the **Astro** framework using the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) theme.
+<!-- This website is built with the **Astro** framework using the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) theme. -->
+**基于 ***Astro*** 框架搭建，使用了 ***[Mizuki](https://github.com/matsuzaka-yuki/mizuki)*** 主题**
 
 ::github{repo="matsuzaka-yuki/Mizuki"}
 
-## 🌟 Theme Features
+<!-- ## 🌟 Theme Features
 
 ### 🎨 Design & User Experience
 - **Modern & Elegant Design** - Clean, minimalist interface with beautiful typography
@@ -46,4 +46,4 @@ This website is built with the **Astro** framework using the [Mizuki](https://gi
 
 ---
 
-*Built with ❤️ using Astro and inspired by modern web design principles.*
+*Built with ❤️ using Astro and inspired by modern web design principles.* -->
