@@ -8,7 +8,8 @@ category: 'Knowledge'
 draft: false 
 lang: ''
 ---
-
+#
+# DDL 数据定义语言
 ## 1. 操作库
 ```sql
 -- 创建库
@@ -28,4 +29,36 @@ alter database db character set utf8;
 
 -- 删除数据库
 drop database db;
+```
+
+## 2. 操作表
+```sql
+-- 创建表
+create table student(
+    id int,
+    name varchar(32),
+    age int,
+    score double(4,1),
+    birthday date,
+    insert_time timestamp
+);
+
+-- 查看表结构
+desc student;
+
+-- 查看创建表的SQL语句
+show create table student;
+
+-- 修改表名
+alter table student rename to students;
+
+-- 添加一列
+alter table students add phone varchar(32);
+
+-- 删除列
+alter table students drop phone;
+
+-- 删除表
+drop table students;
+drop table if exists students;
 ```
