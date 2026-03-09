@@ -62,3 +62,17 @@ alter table students drop phone;
 drop table students;
 drop table if exists students;
 ```
+
+#
+# DML 数据操作语言
+## 1. 添加记录
+```sql
+-- 写全所有列名
+insert into 表名(列名1，列名2，···，列名n) values(值1，值2，···，值n)；
+
+-- 不写列名
+insert into 表名 values(值1，值2，···，值n);
+
+-- 插入部分数据
+insert into 表名(列名1，列名2) values(值1，值2);
+```
