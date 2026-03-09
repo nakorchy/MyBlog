@@ -84,3 +84,4 @@ delete from 表名 where 列名 = 值;
 
 -- 删除表中所有数据
 delete from 表名;
+```
