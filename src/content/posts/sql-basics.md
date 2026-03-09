@@ -76,3 +76,11 @@ insert into 表名 values(值1，值2，···，值n);
 -- 插入部分数据
 insert into 表名(列名1，列名2) values(值1，值2);
 ```
+
+## 2. 删除记录
+```sql
+-- 删除表中数据
+delete from 表名 where 列名 = 值;
+
+-- 删除表中所有数据
+delete from 表名;
