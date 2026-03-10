@@ -85,3 +85,12 @@ delete from 表名 where 列名 = 值;
 -- 删除表中所有数据
 delete from 表名;
 ```
+
+## 3. 修改记录
+```sql
+-- 不带条件的修改（修改所有行)
+update 表名 set 列名 = 值;
+
+-- 带条件的修改
+update 表名 set 列名 = 值 where 列名 = 值;
+```
