@@ -28,6 +28,14 @@ export const friendsData: FriendItem[] = [
         siteurl: "https://blog.sakura.ink",
 		tags: ["Friends"],
 	},
+	{
+		id: 3,
+		title: "松坂日记",
+		imgurl: "https://blog.mysqil.com/_astro/avatar.BDCKBkzJ_UdsLk.webp",
+		desc: "世界は大きい、君は行かなければならない",
+		siteurl: "https://blog.mysqil.com/",
+		tags: ["Docs"],
+	},
 ];
 
 // 获取所有友情链接数据
