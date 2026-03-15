@@ -4,11 +4,11 @@ published: 2026-03-06
 description: ''
 image: ''
 tags: [SQL]
-category: 'Knowledge'
+category: 'Learning'
 draft: false 
 lang: ''
 ---
-#
+
 # DDL 数据定义语言
 ## 1. 操作库
 ```sql
@@ -63,7 +63,7 @@ drop table students;
 drop table if exists students;
 ```
 
-#
+&nbsp;
 # DML 数据操作语言
 ## 1. 添加记录
 ```sql
@@ -93,4 +93,49 @@ update 表名 set 列名 = 值;
 
 -- 带条件的修改
 update 表名 set 列名 = 值 where 列名 = 值;
+```
+
+&nbsp;
+# DQL 数据查询语言
+## 1. 基础关键字
+```sql
+-- 1. between···and 和 in
+--    查询年龄大于等于20，小于等于30
+select * from student where age >= 20 && age <=30;
+select * from student where age >= 20 and age <=30;
+select * from student where age between 20 and 30;
+
+--    查询年龄22，18，25岁的信息
+select * from student where age = 22 or age = 18 or age =25;
+select * from student where age in (22,18,25);
+
+-- 2. is not null 与like（模糊查询）、distinct（去除重复值）
+--    查询英语成绩不为null
+select * from student where English is not null
+
+--    _：单个任意字符
+--    %：多个任意字符
+--    查询姓马的有哪些
+select * from student where name like '马%';
+
+--    查询姓名第二个字是一的人
+select * from student where name like '_一%';
+
+--    查询姓名是三个字的人
+select * from student where name like '___'
+
+--    查询姓名中包含二的人
+select * from student where name like '%二'
+
+-- 3. 关键词 distinct 用于返回唯一不同的值
+select distinct name from student;
+```
+
+## 2. 排序查询 order by
+```sql
+-- 默认升序
+select * from student order by math;
+
+-- 默认降序
+select * from student order by math desc;
 ```

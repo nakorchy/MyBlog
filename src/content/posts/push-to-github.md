@@ -4,11 +4,11 @@ published: 2025-12-22
 description: ''
 image: ''
 tags: ["Github"]
-category: Knowledge
+category: Learning
 draft: false 
 lang: ''
 ---
-#
+
 # 一、前期准备
 ## 1. 注册GitHub
 
@@ -23,7 +23,7 @@ git config --global user.name "用户名"
 git config --global user.email "邮箱地址"
 ```
 
-#
+&nbsp;
 # 二、上传步骤
 ## 1. 在GitHub中创建远程仓库
 
