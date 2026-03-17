@@ -139,3 +139,27 @@ select * from student order by math;
 -- 默认降序
 select * from student order by math desc;
 ```
+
+## 3. 聚合函数
+```sql
+count
+max
+min
+sum
+avg
+```
+
+## 4. 分组查询 group by
+```sql
+-- 按照性别分组。分别查询男、女同学的平均分
+select sex , avg(math) from student group by sex;
+
+-- 按照性别分组。分别查询男、女同学的平均分，人数
+select sex , avg(math) , count(id) from student group by sex;
+
+-- 按照性别分组。分别查询男、女同学的平均分，人数 要求：分数低于70分的人，不参与分组
+select sex , avg(math) , count(id) from student where math > 70 group by sex;
+
+-- 按照性别分组。分别查询男、女同学的平均分，人数 要求：分数低于70分的人，不参与分组，分组之后，人数要大于2
+select sex , avg(math) , count(id) from student where math > 70 group by sex having count(id) > 2;
+```

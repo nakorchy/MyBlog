@@ -34,7 +34,7 @@ export const friendsData: FriendItem[] = [
 		imgurl: "https://blog.mysqil.com/_astro/avatar.BDCKBkzJ_UdsLk.webp",
 		desc: "世界は大きい、君は行かなければならない",
 		siteurl: "https://blog.mysqil.com/",
-		tags: ["Docs"],
+		tags: ["Friends"],
 	},
 ];
 
