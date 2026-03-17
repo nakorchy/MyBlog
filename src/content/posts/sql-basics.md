@@ -68,31 +68,31 @@ drop table if exists students;
 ## 1. 添加记录
 ```sql
 -- 写全所有列名
-insert into 表名(列名1，列名2，···，列名n) values(值1，值2，···，值n)；
+insert into student(列名1，列名2，···，列名n) values(值1，值2，···，值n)；
 
 -- 不写列名
-insert into 表名 values(值1，值2，···，值n);
+insert into student values(值1，值2，···，值n);
 
 -- 插入部分数据
-insert into 表名(列名1，列名2) values(值1，值2);
+insert into student(列名1，列名2) values(值1，值2);
 ```
 
 ## 2. 删除记录
 ```sql
 -- 删除表中数据
-delete from 表名 where 列名 = 值;
+delete from student where 列名 = 值;
 
 -- 删除表中所有数据
-delete from 表名;
+delete from student;
 ```
 
 ## 3. 修改记录
 ```sql
 -- 不带条件的修改（修改所有行)
-update 表名 set 列名 = 值;
+update student set 列名 = 值;
 
 -- 带条件的修改
-update 表名 set 列名 = 值 where 列名 = 值;
+update student set 列名 = 值 where 列名 = 值;
 ```
 
 &nbsp;
@@ -100,14 +100,14 @@ update 表名 set 列名 = 值 where 列名 = 值;
 ## 1. 基础关键字
 ```sql
 -- 1. between···and 和 in
---    查询年龄大于等于20，小于等于30
-select * from student where age >= 20 && age <=30;
-select * from student where age >= 20 and age <=30;
-select * from student where age between 20 and 30;
+--    查询年龄大于等于18，小于等于38
+select * from student where age >= 18 && age <=38;
+select * from student where age >= 18 and age <=38;
+select * from student where age between 18 and 38;
 
---    查询年龄22，18，25岁的信息
-select * from student where age = 22 or age = 18 or age =25;
-select * from student where age in (22,18,25);
+--    查询年龄18，20，22岁的信息
+select * from student where age = 18 or age = 20 or age =22;
+select * from student where age in (18,20,22);
 
 -- 2. is not null 与like（模糊查询）、distinct（去除重复值）
 --    查询英语成绩不为null
@@ -115,11 +115,11 @@ select * from student where English is not null
 
 --    _：单个任意字符
 --    %：多个任意字符
---    查询姓马的有哪些
-select * from student where name like '马%';
+--    查询姓张的有哪些
+select * from student where name like '张%';
 
---    查询姓名第二个字是一的人
-select * from student where name like '_一%';
+--    查询姓名第二个字是三的人
+select * from student where name like '_三%';
 
 --    查询姓名是三个字的人
 select * from student where name like '___'
@@ -134,10 +134,10 @@ select distinct name from student;
 ## 2. 排序查询 order by
 ```sql
 -- 默认升序
-select * from student order by math;
+select * from student order by chinese;
 
 -- 默认降序
-select * from student order by math desc;
+select * from student order by chinese desc;
 ```
 
 ## 3. 聚合函数
@@ -151,15 +151,15 @@ avg
 
 ## 4. 分组查询 group by
 ```sql
--- 按照性别分组。分别查询男、女同学的平均分
-select sex , avg(math) from student group by sex;
+-- 按照性别分组。分别查询男、女同学的语文平均分
+select sex , avg(chinese) from student group by sex;
 
--- 按照性别分组。分别查询男、女同学的平均分，人数
-select sex , avg(math) , count(id) from student group by sex;
+-- 按照性别分组。分别查询男、女同学的语文平均分，人数
+select sex , avg(chinese) , count(*) from student group by sex;
 
--- 按照性别分组。分别查询男、女同学的平均分，人数 要求：分数低于70分的人，不参与分组
-select sex , avg(math) , count(id) from student where math > 70 group by sex;
+-- 按照性别分组。分别查询男、女同学的语文平均分，人数 要求：分数低于60分的人，不参与分组
+select sex , avg(chinese) , count(*) from student where chinese > 60 group by sex;
 
--- 按照性别分组。分别查询男、女同学的平均分，人数 要求：分数低于70分的人，不参与分组，分组之后，人数要大于2
-select sex , avg(math) , count(id) from student where math > 70 group by sex having count(id) > 2;
+-- 按照性别分组。分别查询男、女同学的语文平均分，人数 要求：分数低于60分的人，不参与分组，分组之后，人数要大于10
+select sex , avg(chinese) , count(*) from student where chinese > 60 group by sex having count(*) > 10;
 ```
