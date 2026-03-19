@@ -38,8 +38,10 @@ create table student(
     id int,
     name varchar(32),
     age int,
+    sex boolean,
     score double(4,1),
     birthday date,
+    class varchar(32),
     insert_time timestamp
 );
 
@@ -152,14 +154,49 @@ avg
 ## 4. 分组查询 group by
 ```sql
 -- 按照性别分组。分别查询男、女同学的语文平均分
-select sex , avg(chinese) from student group by sex;
+select sex,avg(chinese) from student group by sex;
 
 -- 按照性别分组。分别查询男、女同学的语文平均分，人数
-select sex , avg(chinese) , count(*) from student group by sex;
+select sex,avg(chinese),count(*) from student group by sex;
 
 -- 按照性别分组。分别查询男、女同学的语文平均分，人数 要求：分数低于60分的人，不参与分组
-select sex , avg(chinese) , count(*) from student where chinese > 60 group by sex;
+select sex,avg(chinese),count(*) from student where chinese > 60 group by sex;
 
 -- 按照性别分组。分别查询男、女同学的语文平均分，人数 要求：分数低于60分的人，不参与分组，分组之后，人数要大于10
-select sex , avg(chinese) , count(*) from student where chinese > 60 group by sex having count(*) > 10;
+select sex,avg(chinese),count(*) from student where chinese > 60 group by sex having count(*) > 10;
+```
+
+## 5. 分页查询
+```sql
+-- 每页显示6条记录
+select * from student limit 0,6;  -- 第一页
+select * from student limit 6,6;  -- 第二页
+select * from student limit 12,6; -- 第三页
+```
+
+## 6. 内连接查询
+### 1. 隐式内连接
+```sql
+-- 查询学生姓名，性别，班级表的名称
+select student.name,student.sex,class.name from student,class where student.class = class.id;
+
+select
+    t1.name,
+    t1.sex,
+    t2.name
+from
+    student t1,
+    class t2
+where
+    t1.class = t2.id;
+```
+
+### 2. 显式内连接
+```sql
+-- 语法
+select 字段列表 from 表名1 [inner] join 表名2 on 条件
+
+-- 例如
+select * from student inner join class on student.class = class.id;
+select * from student join class on student.class = class.id;
 ```
