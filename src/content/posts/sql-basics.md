@@ -42,6 +42,7 @@ create table student(
     score double(4,1),
     birthday date,
     class varchar(32),
+    duty_id int;
     insert_time timestamp
 );
 
@@ -113,7 +114,7 @@ select * from student where age in (18,20,22);
 
 -- 2. is not null 与like（模糊查询）、distinct（去除重复值）
 --    查询英语成绩不为null
-select * from student where English is not null
+select * from student where English is not null;
 
 --    _：单个任意字符
 --    %：多个任意字符
@@ -124,10 +125,10 @@ select * from student where name like '张%';
 select * from student where name like '_三%';
 
 --    查询姓名是三个字的人
-select * from student where name like '___'
+select * from student where name like '___';
 
 --    查询姓名中包含二的人
-select * from student where name like '%二'
+select * from student where name like '%二';
 
 -- 3. 关键词 distinct 用于返回唯一不同的值
 select distinct name from student;
@@ -194,7 +195,7 @@ where
 ### 2. 显式内连接
 ```sql
 -- 语法
-select 字段列表 from 表名1 [inner] join 表名2 on 条件
+select 字段列表 from 表名1 [inner] join 表名2 on 条件;
 
 -- 例如
 select * from student inner join class on student.class = class.id;
@@ -202,11 +203,41 @@ select * from student join class on student.class = class.id;
 ```
 
 ## 7. 外连接查询
+### 1. 左外链接：查询的是左表所有数据及其交集部分
 ```sql
--- 1. 左外链接：查询的是左表所有数据及其交集部分
 --    查询所有学生信息，如果学生有职务，则查询职务，没有职务，则不显示
-select t1.*,t2.name from student t1 left join duties t2 on t1.duty_id = t2.id
+select t1.*,t2.name from student t1 left join duties t2 on t1.duty_id = t2.id;
+```
 
--- 2. 右外连接：查询的是右表所有数据及其交集部分
-select t1.*,t2.name from student t1 right join duties t2 on t1.duty_id = t2.id
+### 2. 右外连接：查询的是右表所有数据及其交集部分
+```sql
+select t1.*,t2.name from student t1 right join duties t2 on t1.duty_id = t2.id;
+```
+
+## 8. 子查询（嵌套查询）
+```sql
+-- 查询分数最高的学生
+-- 1. 查询最高的分数是多少 700
+select max(score) from student；
+
+-- 2. 查询学生信息，并且分数为 700 的
+select * from student where student.score = 700;
+
+-- 3. 一条sql就完成这个操作。就是子查询
+select * from student where student.score = (select max(score) from student);
+```
+
+### 1. 子查询的结果是单行单列的
+```sql
+select * from student where student.score < (select max(score) from student);
+```
+
+### 2. 子查询的结果是多行单列的：用运算符 in 判断
+```sql
+select * from student where student.duty_id in (select id from duties where name = '学生会');
+```
+
+### 3. 子查询的结果是多行多列的：子查询作为一张虚拟表参与查询
+```sql
+select * from student t1 , (select * from student where student.insert_time > 2020-3-17) t2 where t1.duties.id = t2.id;
 ```
