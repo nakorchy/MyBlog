@@ -239,5 +239,5 @@ select * from student where student.duty_id in (select id from duties where name
 
 ### 3. 子查询的结果是多行多列的：子查询作为一张虚拟表参与查询
 ```sql
-select * from student t1 , (select * from student where student.insert_time > 2020-3-17) t2 where t1.duties.id = t2.id;
+select * from duties t1 , (select * from student where student.insert_time > '2020-3-17') t2 where t1.id = t2.duty_id;
 ```
