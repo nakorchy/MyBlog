@@ -234,7 +234,7 @@ select * from student where student.score < (select max(score) from student);
 
 ### 2. 子查询的结果是多行单列的：用运算符 in 判断
 ```sql
-select * from student where student.duty_id in (select id from duties where name = '学生会');
+select * from student where student.duty_id in (select id from duties where name = '学生会办公室' or name = '学生会宣传部');
 ```
 
 ### 3. 子查询的结果是多行多列的：子查询作为一张虚拟表参与查询
