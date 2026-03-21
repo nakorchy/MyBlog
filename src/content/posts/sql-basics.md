@@ -200,3 +200,13 @@ select 字段列表 from 表名1 [inner] join 表名2 on 条件
 select * from student inner join class on student.class = class.id;
 select * from student join class on student.class = class.id;
 ```
+
+## 7. 外连接查询
+```sql
+-- 1. 左外链接：查询的是左表所有数据及其交集部分
+--    查询所有学生信息，如果学生有职务，则查询职务，没有职务，则不显示
+select t1.*,t2.name from student t1 left join duties t2 on t1.duty_id = t2.id
+
+-- 2. 右外连接：查询的是右表所有数据及其交集部分
+select t1.*,t2.name from student t1 right join duties t2 on t1.duty_id = t2.id
+```
