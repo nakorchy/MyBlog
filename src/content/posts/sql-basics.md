@@ -234,10 +234,23 @@ select * from student where student.score < (select max(score) from student);
 
 ### 2. 子查询的结果是多行单列的：用运算符 in 判断
 ```sql
-select * from student where student.duty_id in (select id from duties where name = '学生会办公室' or name = '学生会宣传部');
+select * from student where student.duty_id in (select id from duties where name = '学生会' or name = '新媒体中心');
 ```
 
 ### 3. 子查询的结果是多行多列的：子查询作为一张虚拟表参与查询
 ```sql
 select * from duties t1 , (select * from student where student.insert_time > '2020-3-17') t2 where t1.id = t2.duty_id;
+```
+
+&nbsp;
+# DCL 数据控制语言
+## 1. 管理用户
+### 1. 添加用户
+```sql
+create user '用户名@主机名' identified by '密码';
+```
+
+### 2. 删除用户
+```sql
+drop user '用户名@主机名';
 ```
