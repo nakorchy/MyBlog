@@ -258,5 +258,17 @@ drop user '用户名'@'主机名';
 ## 2. 权限管理
 ### 1. 查询权限
 ```sql
-show grants for '用户名'@'主机名'
+show grants for '用户名'@'主机名';
+```
+
+### 2. 授予权限
+```sql
+grant 权限列表 on 数据库名.表名 to '用户名'@'主机名';
+grant all on *.* to 'zhangsan'@'localhost';
+```
+
+### 3. 撤销权限
+```sql
+revoke 权限列表 on 数据库名.表名 from '用户名'@'主机名';
+revoke update on db.student from 'zhangsan'@'localhost';
 ```
