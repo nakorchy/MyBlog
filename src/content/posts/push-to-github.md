@@ -43,18 +43,23 @@ git add .
 git commit -m "提交说明"
 ```
 
-## 4. 关联远程仓库
+## 4. 创建分支
+```markdown
+git branch -M main
+```
+
+## 5. 关联远程仓库
 ```markdown
 git remote add origin https://github.com/用户名/仓库名.git
 ```
 
-## 5. 推送项目到GitHub
+## 6. 推送项目到GitHub
 ```markdown
 # 首次推送需指定分支（默认主分支为main）
 git push -u origin main
 ```
 
-## 6. 更新推送
+## 7. 更新推送
 ```markdown
 # 1. 添加修改的文件到暂存区
 git add .
