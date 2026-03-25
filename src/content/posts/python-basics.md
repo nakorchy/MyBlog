@@ -17,15 +17,25 @@ num = 20
 print(f"num = {num}")
 ```
 
+&nbsp;
 # 2. 运算符与表达式
 
+&nbsp;
 # 3. 流程控制语句
 ## 1. 选择语句
-补充：match...case 语句
+### 1. if 语句
+
+### 2. if...else 语句
+
+### 3. if...elif...else 语句
+
+### 4. 选择语句嵌套
+
+### 5. match...case 语句
 1. 匹配字面值
 
 2. 绑定变量
-```Python
+```python
 # 出现变量时，这个变量会尽可能匹配 match 的内容，并且会为这个变量进行赋值
 a = input("请输入一个需要匹配的数字：)
 match a:
@@ -33,8 +43,8 @@ match a:
         print('变量b被赋值为：',b)
 ```
 
-1. 约束项（if语句）
-```Python
+3. 约束项（if语句）
+```python
 # 在实现 case 匹配项时，可以添加一个 if 语句来作为该 case 的约束项。
 print = eval(input("请输入坐标："))
 match point:
@@ -46,8 +56,8 @@ match point:
         print(x,y,'x等于y')
 ```
 
-1. 匹配字典
-```Python
+4. 匹配字典
+```python
 # 1. 匹配字典时，只匹配 case 中提到的结构，而不管字典中的其他键
 d = {1:'alan',2:'andy'}
 match d:
@@ -69,12 +79,16 @@ match d:
 
 5. 类模式匹配
 
-
+&nbsp;
 # 4. 列表和元组
 ## 4.1 序列
+
 ## 4.2 列表
+
 ## 4.3 元组
 
+&nbsp;
 # 5. 字典和集合
 
+&nbsp;
 # 6. 字符串
