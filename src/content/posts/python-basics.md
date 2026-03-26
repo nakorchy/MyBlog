@@ -25,13 +25,13 @@ print(f"num = {num}")
 ## 1. 选择语句
 ### 1. if 语句
 
-### 2. if...else 语句
+### 2. if···else 语句
 
-### 3. if...elif...else 语句
+### 3. if···elif···else 语句
 
 ### 4. 选择语句嵌套
 
-### 5. match...case 语句
+### 5. match···case 语句
 1. 匹配字面值
 
 2. 绑定变量

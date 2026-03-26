@@ -1,9 +1,9 @@
 ---
-title: SQL基础语句
+title: SQL 基础语句与数据库
 published: 2026-03-06
 description: ''
 image: ''
-tags: [SQL]
+tags: [SQL,数据库]
 category: 'Learning'
 draft: false 
 lang: ''
@@ -271,4 +271,77 @@ grant all on *.* to 'zhangsan'@'localhost';
 ```sql
 revoke 权限列表 on 数据库名.表名 from '用户名'@'主机名';
 revoke update on db.student from 'zhangsan'@'localhost';
+```
+
+# 数据库完整性
+## 1. 实体完整性
+```sql
+create table student(
+    id int primary key,  -- 在列级定义主码
+    ···
+)
+
+-- 或
+create table student(
+    ···
+    primary key(id),  -- 在表级定义主码
+)
+```
+
+## 2. 参照完整性
+```sql
+create table student(
+    ···
+    foreign key(score) references course(score),  -- 在表级定义参照完整性
+)
+```
+
+## 3. 用户定义完整性
+```sql
+-- 1. 不允许取空值
+create table student(
+    ···
+    name varchar(32) not null,
+    ···
+)
+
+-- 2. 列值唯一
+create table student(
+    id int unique not null,
+    ···
+)
+
+-- 3. 用 check 短语指定列值应该满足的条件
+create table student(
+    ···
+    age int check(age >= 6),  --    check 短语也可以在表级定义
+    ···
+)
+```
+
+## 4. 完整性约束命名子句
+```sql
+create table student(
+    ···
+    age int
+        constraint C1 not null,
+    score double(4,1)
+        constraint C2 check(score <= 100),
+    ···
+        constraint studentkey primary key(id)  -- 主码约束
+)
+```
+
+## 5. 修改表中完整性限制
+```sql
+-- 1. 删除表中完整性限制
+alter table student
+    drop constraint C1;
+
+-- 2. 可以先删除原来的约束条件，再增加新的约束条件
+alter table student
+    drop constraint C1;
+
+alter table student
+    add constraint C1 check(age < 100);
 ```

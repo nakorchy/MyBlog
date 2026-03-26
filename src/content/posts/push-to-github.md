@@ -1,5 +1,5 @@
 ---
-title: 如何把项目上传到GitHub上
+title: 如何把项目上传到 GitHub 上
 published: 2025-12-22
 description: ''
 image: ''
