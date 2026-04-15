@@ -240,18 +240,18 @@ export const skillsData: Skill[] = [
 	// 	projects: ["system-tool", "performance-critical-app"],
 	// 	color: "#CE422B",
 	// },
-	// {
-	// 	id: "cpp",
-	// 	name: "C++",
-	// 	description:
-	// 		"A high-performance systems programming language widely used in game development, system software, and embedded development.",
-	// 	icon: "logos:c-plusplus",
-	// 	category: "backend",
-	// 	level: "beginner",
-	// 	// experience: { years: 1, months: 0 },
-	// 	projects: ["game-engine", "system-optimization"],
-	// 	color: "#00599C",
-	// },
+	{
+		id: "cpp",
+		name: "C++",
+		description:
+			"A high-performance systems programming language widely used in game development, system software, and embedded development.",
+		icon: "logos:c-plusplus",
+		category: "backend",
+		level: "beginner",
+		// experience: { years: 1, months: 0 },
+		projects: ["game-engine", "system-optimization"],
+		color: "#00599C",
+	},
 	{
 		id: "c",
 		name: "C",
