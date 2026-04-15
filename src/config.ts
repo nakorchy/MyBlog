@@ -41,7 +41,7 @@ export const siteConfig: SiteConfig = {
 		diary: true, // 日记页面开关
 		friends: true, // 友链页面开关
 		projects: false, // 项目页面开关
-		skills: false, // 技能页面开关
+		skills: true, // 技能页面开关
 		timeline: false, // 时间线页面开关
 		albums: true, // 相册页面开关
 		devices: false, // 设备页面开关
@@ -322,11 +322,11 @@ export const navBarConfig: NavBarConfig = {
 				// 	url: "/projects/",
 				// 	icon: "material-symbols:work",
 				// },
-				// {
-				// 	name: "Skills",
-				// 	url: "/skills/",
-				// 	icon: "material-symbols:psychology",
-				// },
+				{
+					name: "Skills",
+					url: "/skills/",
+					icon: "material-symbols:psychology",
+				},
 				// {
 				// 	name: "Timeline",
 				// 	url: "/timeline/",
