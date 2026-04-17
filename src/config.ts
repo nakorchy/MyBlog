@@ -50,7 +50,7 @@ export const siteConfig: SiteConfig = {
 	// 顶栏标题配置
 	navbarTitle: {
 		// 顶栏标题文本
-		text: "沂夏 Blog",
+		text: "沂夏的小站",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/logo2.png",
 	},
@@ -81,7 +81,7 @@ export const siteConfig: SiteConfig = {
 	// 壁纸模式配置
 	wallpaperMode: {
 		// 默认壁纸模式：banner=顶部横幅，fullscreen=全屏壁纸，none=无壁纸
-		defaultMode: "banner",
+		defaultMode: "fullscreen",
 		// 整体布局方案切换按钮显示设置（默认："desktop"）
 		// "off" = 不显示
 		// "mobile" = 仅在移动端显示
@@ -99,8 +99,7 @@ export const siteConfig: SiteConfig = {
 				// "/assets/desktop-banner/3.webp",
 				// "/assets/desktop-banner/4.webp",
 				// "/assets/desktop-banner/5.webp",
-				// "/assets/desktop-banner/6.webp",
-				"/assets/desktop-banner/7.jpg",
+				// "/assets/desktop-banner/6.webp"
 			], // 桌面横幅图片
 			mobile: [
 				// "/assets/mobile-banner/1.webp",
@@ -109,7 +108,6 @@ export const siteConfig: SiteConfig = {
 				// "/assets/mobile-banner/4.webp",
 				// "/assets/mobile-banner/5.webp",
 				// "/assets/mobile-banner/6.webp",
-				"/assets/mobile-banner/7.jpg",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -215,7 +213,6 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 				// "/assets/desktop-banner/4.webp",
 				// "/assets/desktop-banner/5.webp",
 				// "/assets/desktop-banner/6.webp",
-				"/assets/desktop-banner/7.jpg",
 			], // 桌面横幅图片
 			mobile: [
 				// "/assets/mobile-banner/1.webp",
@@ -224,7 +221,6 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 				// "/assets/mobile-banner/4.webp",
 				// "/assets/mobile-banner/5.webp",
 				// "/assets/mobile-banner/6.webp",
-				"/assets/mobile-banner/7.jpg",
 			], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
@@ -668,7 +664,7 @@ export const widgetConfigs = {
 } as const;
 
 export const umamiConfig = {
-	enabled: false, // 是否显示Umami统计
+	enabled: true, // 是否显示Umami统计
 	apiKey: import.meta.env.UMAMI_API_KEY || "api_xxxxxxxx", // API密钥优先从环境变量读取，否则使用配置文件中的值
 	baseUrl: "https://api.umami.is", // Umami Cloud API地址
 	scripts: `
