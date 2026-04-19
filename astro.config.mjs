@@ -36,9 +36,9 @@ export default defineConfig({
 		tailwind({
 			nesting: true,
 		}),
-		// umami({
-		// 	shareUrl: "", // Umami 分享链接（见下方说明）如设置为 false 则禁用组件的umami访问量信息显示,不影响umami统计
-    	// }),
+		umami({
+			shareUrl: "https://cloud.umami.is/analytics/eu/share/bqKwoPFn7J785bhl", // Umami 分享链接（见下方说明）如设置为 false 则禁用组件的umami访问量信息显示,不影响umami统计
+    	}),
 		swup({
 			theme: false,
 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
