@@ -38,12 +38,12 @@ export const siteConfig: SiteConfig = {
 	// 特色页面开关配置(关闭不在使用的页面有助于提升SEO,关闭后直接在顶部导航删除对应的页面就行)
 	featurePages: {
 		anime: false, // 番剧页面开关
-		diary: true, // 日记页面开关
+		diary: false, // 日记页面开关
 		friends: true, // 友链页面开关
 		projects: false, // 项目页面开关
 		skills: true, // 技能页面开关
 		timeline: false, // 时间线页面开关
-		albums: true, // 相册页面开关
+		albums: false, // 相册页面开关
 		devices: false, // 设备页面开关
 	},
 
@@ -197,21 +197,11 @@ export const siteConfig: SiteConfig = {
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [
-				// "/assets/desktop-banner/1.webp",
-				// "/assets/desktop-banner/2.webp",
-				// "/assets/desktop-banner/3.webp",
-				// "/assets/desktop-banner/4.webp",
-				// "/assets/desktop-banner/5.webp",
-				// "/assets/desktop-banner/6.webp",
-			], // 桌面横幅图片
-			mobile: [
-				// "/assets/mobile-banner/1.webp",
-				// "/assets/mobile-banner/2.webp",
-				// "/assets/mobile-banner/3.webp",
-				// "/assets/mobile-banner/4.webp",
-				// "/assets/mobile-banner/5.webp",
-				// "/assets/mobile-banner/6.webp",
-			], // 移动横幅图片
+			"/assets/desktop-banner/1.png",
+		], // 桌面横幅图片
+		mobile: [
+			"/assets/mobile-banner/1.png",
+		], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
 	carousel: {
@@ -253,34 +243,34 @@ export const navBarConfig: NavBarConfig = {
 				// },
 			],
 		},
-		{
-			name: "My",
-			url: "/content/",
-			icon: "material-symbols:person",
-			children: [
-				// {
-				// 	name: "Anime",
-				// 	url: "/anime/",
-				// 	icon: "material-symbols:movie",
-				// },
-				{
-					name: "Diary",
-					url: "/diary/",
-					icon: "material-symbols:book",
-				},
-				{
-					name: "Gallery",
-					url: "/albums/",
-					icon: "material-symbols:photo-library",
-				},
-				// {
-				// 	name: "Devices",
-				// 	url: "devices/",
-				// 	icon: "material-symbols:devices",
-				// 	external: false,
-				// },
-			],
-		},
+		// {
+		// 	name: "My",
+		// 	url: "/content/",
+		// 	icon: "material-symbols:person",
+		// 	children: [
+		// 		{
+		// 			name: "Anime",
+		// 			url: "/anime/",
+		// 			icon: "material-symbols:movie",
+		// 		},
+		// 		{
+		// 			name: "Diary",
+		// 			url: "/diary/",
+		// 			icon: "material-symbols:book",
+		// 		},
+		// 		{
+		// 			name: "Gallery",
+		// 			url: "/albums/",
+		// 			icon: "material-symbols:photo-library",
+		// 		},
+		// 		{
+		// 			name: "Devices",
+		// 			url: "devices/",
+		// 			icon: "material-symbols:devices",
+		// 			external: false,
+		// 		},
+		// 	],
+		// },
 		{
 			name: "About",
 			url: "/content/",

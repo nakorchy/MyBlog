@@ -16,24 +16,26 @@ export type DeviceCategory = {
 };
 
 export const devicesData: DeviceCategory = {
-	OnePlus: [
+	MobilePhone: [
 		{
-			name: "OnePlus 13T",
-			image: "/images/device/oneplus13t.png",
-			specs: "Gray / 16G + 1TB",
+			name: " ",
+			image: " ",
+			specs: " ",
 			description:
-				"Flagship performance, Hasselblad imaging, 80W SuperVOOC.",
-			link: "https://www.oneplus.com/cn/13t",
+				" ",
+			link: " ",
 		},
 	],
-	Router: [
-		{
-			name: "GL-MT3000",
-			image: "/images/device/mt3000.png",
-			specs: "1000Mbps / 2.5G",
-			description:
-				"Portable WiFi 6 router suitable for business trips and home use.",
-			link: "https://www.gl-inet.cn/products/gl-mt3000/",
-		},
-	],
+	// Router: [
+	// 	{
+	// 		name: "GL-MT3000",
+	// 		image: "/images/device/mt3000.png",
+	// 		specs: "1000Mbps / 2.5G",
+	// 		description:
+	// 			"Portable WiFi 6 router suitable for business trips and home use.",
+	// 		link: "https://www.gl-inet.cn/products/gl-mt3000/",
+	// 	},
+	// ],
+
+	// 此处为空，pages/devices.astro 的第 57 行会报错
 };
